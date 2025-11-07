@@ -48,7 +48,7 @@ def load_and_fit(name, csv_file):
     energy = df["energy_density"].to_numpy()*1e-9
 
     # Linear fit through origin (ΔE/V₀ = A δ²)
-    A, *_ = np.polyfit(d2, energy, 1)
+    A, *_ = np.polyfit(delta, energy, 2)
     fit_energy = A * (np.linspace(-0.01,0.01,200))**2
 
     plt.figure(figsize=(3.2, 3.2))
