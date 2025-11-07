@@ -1,0 +1,48 @@
+&CONTROL
+  calculation   = 'relax',
+  prefix        = 'diamond',
+  outdir        = './out',
+  pseudo_dir    = './PseudoPotential',
+  tstress       = .true.,
+  tprnfor       = .true.,
+  verbosity     = 'high'
+/
+&SYSTEM
+  ibrav    = 0,
+  nat      = 8, 
+  ntyp = 1,
+  ecutwfc  = 40,
+  ecutrho  = 325,
+  occupations = 'fixed'
+/
+&ELECTRONS
+   electron_maxstep = 300
+   mixing_beta      = 0.7
+   scf_must_converge = .TRUE.
+/
+&IONS
+  ion_dynamics = 'bfgs'
+/
+&CELL
+  cell_dofree = 'none'   ! keep strained cell fixed; relax atoms only
+/
+ATOMIC_SPECIES
+  C 12.011 C.pbesol-n-kjpaw_psl.1.0.0.UPF
+
+K_POINTS automatic
+  8 8 8 0 0 0
+
+CELL_PARAMETERS angstrom
+  3.5528761610 0.0000000000 0.0000000000
+  -0.0266465712 3.5528761610 0.0000000000
+  0.0000000000 0.0000000000 3.5528761610
+
+ATOMIC_POSITIONS angstrom
+  C 0.8882191550 0.8882191550 0.8882191550
+  C 0.0000000000 0.0000000000 0.0000000000
+  C 0.8882191550 2.6646570058 2.6646570058
+  C 0.0000000000 1.7764380804 1.7764380804
+  C 2.6646570058 0.8882191550 2.6646570058
+  C 1.7764380804 0.0000000000 1.7764380804
+  C 2.6646570058 2.6646570058 0.8882191550
+  C 1.7764380804 1.7764380804 0.0000000000

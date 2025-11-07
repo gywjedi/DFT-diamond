@@ -1,0 +1,7 @@
+A_hydro = 2038.62 GPa
+A_ortho = 938.66 GPa
+A_shear = 299.30 GPa
+
+C11 = 1305.31 GPa
+C12 = 366.65 GPa
+C44 = 598.60 GPa
